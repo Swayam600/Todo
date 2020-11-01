@@ -1,0 +1,25 @@
+{% extends 'app/base.html' %}
+
+
+{% block link %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'app/form.css' %}">
+{% endblock link %}
+
+{% block title %}
+Registration    
+{% endblock title %}
+
+{% block body %}
+<div class="content">
+  <h2>Login </h2>
+<form action="{% url 'login' %}" method="POST"> {% csrf_token %}
+    <input type="text" name="username" id="username" placeholder="username"> <br>
+    <input type="password" name="password" id="password" placeholder="password"> <br>
+    <button type="submit">Log in</button>
+</form>
+{% if warning %}
+  {{ warning }}
+{% endif %}
+</div>
+{% endblock body %}

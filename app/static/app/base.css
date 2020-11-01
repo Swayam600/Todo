@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    margin: 0;
+    
+    font-family: monospace;
+}
+:root {
+    --primary: #233D4D;
+    --secondary: #43799b;
+
+    /* --primary: #192ac29d;
+    --secondary: #1405789c; */
+
+    /* --primary: #8D3B72;
+    --secondary: #8A7090; */
+
+    /* --primary: #2e0e0288;
+    --secondary: #581908a1; */
+
+    /* --primary: #485696;
+    --secondary: #FC7A1E; */
+}
+body {
+    background: var(--primary)
+}
+a {
+    text-decoration: none;
+}

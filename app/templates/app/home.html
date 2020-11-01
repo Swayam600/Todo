@@ -1,0 +1,77 @@
+{% extends 'app/base.html' %}
+
+{% block link %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'app/home.css' %}">
+
+{% endblock link %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block body %}
+
+<div class="container">
+
+    <!-- nav-bar starts here -->
+    <div class="nav-wrapper">
+        <div class="logo">
+            The Logo 
+        </div>
+        <button class="ham" id="burger" onclick="show()">
+            <div class="line" id="l1"></div>
+            <div class="line" id="l2"></div>
+            <div class="line" id="l3"></div>
+        </button>
+        <div class="btns" id="hidden">
+            {% if user.is_authenticated %}
+            <a href="#">Hi,{{ user.username }}</a>
+            <a href="{% url 'logout' %}">Logout</a>
+            {% else %}
+            <a href="{% url 'register' %}">Sign in</a>
+            <a href="{% url 'login' %}">Login</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- form start here -->
+    <form id="adding" action="{% url 'add_task' %}" method="POST"> {% csrf_token %}
+        {% if user.is_authenticated %}
+        <input type="text" name="task" id="task" placeholder="Add today's task" required>
+        <button type="submit" autocomplete="off">Add</button>
+        {% else %}
+        <div><a id="sign-in-message" href="{% url 'register' %}">Sign in to add</a></div>
+        {% endif %}
+    </form>
+
+    <!-- list start here -->
+    {% if task_list %}
+    <ol>
+        {% for task in task_list %}
+        <li>
+            {{ task }} &nbsp; <form action="{% url 'delete_task' task.id %}"> {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ol>
+    {% endif %}
+</div>
+<script>
+    function show() {
+
+
+
+        x = document.getElementById('hidden');
+
+        if (x.style.width == '40%') {
+            x.style.width = '0%';
+        }
+        else {
+            x.style.width = '40%';
+        }
+
+    }
+</script>
+{% endblock body %}

@@ -1,0 +1,26 @@
+{% extends 'app/base.html' %}
+
+{% block link %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'app/form.css' %}">
+{% endblock link %}
+
+{% block title %}
+Registration
+{% endblock title %}
+
+{% block body %}
+<div class="content">
+  <h2>Join Today</h2>
+  <form action="{% url 'register' %}" method="POST"> {% csrf_token %}
+    <input type="text" name="username" id="username" placeholder="Username" autocomplete="off"> <br>
+    <input type="email" name="email" id="email" placeholder="Email Address" autocomplete="off"> <br>
+    <input type="password" name="password" id="password" placeholder="Password" autocomplete="off"> <br>
+    <button type="submit">Sign up</button>
+  </form>
+  <span>Have a account sign in <a href="{% url 'login' %}">here</a></span>
+  {% if warning %}
+  <span id="warn">{{ warning }}</span>
+  {% endif %}
+</div>
+{% endblock body %}
