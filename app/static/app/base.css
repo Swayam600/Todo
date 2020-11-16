@@ -19,7 +19,7 @@
     --secondary: #581908a1; */
 
     /* --primary: #485696;
-    --secondary: #FC7A1E; */
+    --secondary: #fc7a1e96; */
 }
 body {
     background: var(--primary)

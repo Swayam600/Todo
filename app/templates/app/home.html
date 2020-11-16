@@ -47,7 +47,7 @@ Home
 
     <!-- list start here -->
     {% if task_list %}
-    <ol>
+    <ul>
         {% for task in task_list %}
         <li>
             {{ task }} &nbsp; <form action="{% url 'delete_task' task.id %}"> {% csrf_token %}
@@ -55,7 +55,7 @@ Home
             </form>
         </li>
         {% endfor %}
-    </ol>
+    </ul>
     {% endif %}
 </div>
 <script>

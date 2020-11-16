@@ -14,25 +14,26 @@
     margin: 30px 0;
 }
 .content form {
-    /* border: 2px solid white; */
+    /* border: 2px solid var(--primary); */
     min-width: 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px;
+    padding: 20px;
     margin-top: 10%
 }
 ::placeholder {
     font-size: 20px;
-    color: white;
+    color: var(--secondary);
 }
 .content form input {
-    height: 30px;
+    height: 45px;
+    border-radius: 20px;
     width: 70%;
-    border: 1px solid white;
+    border: none;
     outline: none;
-    background: none;
-    color: white;
+    background: var(--primary);
+    color: var(--secondary);
     font-size: 20px;
     padding-left: 10px;
 }
@@ -40,24 +41,26 @@
     width: 25%;
     font-size: 20px;
     outline: none;
-    border: 1px solid white;
-    background: none;
+    border: none;
+    border-radius: 20px;
+    background: var(--primary);
     position: relative;
     right: 23%;
-    color: white;
-    height: 30px;
+    color: var(--secondary);
+    height: 45px;
     transition: 0.5s;
 }
 .content form button:hover {
-    box-shadow: inset 0 -50px 0 white;
-    color: var(--primary)
+    box-shadow: inset 0 -50px 0 var(--secondary);
+    color: var(--primary);
+    border: 1px solid var(--primary)
 }
 
 span {
     font-size: 20px;
 }
 span a {
-    color: white;
+    color: var(--primary);
     text-decoration: underline;
 }
 

@@ -94,20 +94,20 @@
     border-radius: 10px;
     color: var(--primary)
 }
-ol {
+ul {
     color: white;
     font-size: 20px;
     width: 20%;
     margin: auto;
 }
-ol li {
+ul li {
     margin: 10px 0;
     /* border: 1px solid white; */
 }
-ol li form {
+ul li form {
     display: inline;
 }
-ol li form button {
+ul li form button {
     border: none;
     outline: none;
     background: none;
@@ -165,7 +165,7 @@ ol li form button {
     #adding button {
         height: 40px;
     }
-    ol {
+    ul {
         width: 80%;
     }
 }
